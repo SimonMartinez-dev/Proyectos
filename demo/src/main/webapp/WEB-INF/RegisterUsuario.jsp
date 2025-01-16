@@ -5,16 +5,25 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Iniciar Sesión</title>
+<title>Registrarse</title>
 </head>
 <body>
+	<h1>FRASES</h1>
 	<ul>
 		<li><a href="/">Login</a></li>
 		<li><a href="/registro">Registro</a></li>
 	</ul>
-	<h2>Iniciar Sesión</h2>
-	<form:form action="/login" method="POST" modelAttribute="loginUsuario">
-
+	<h2>Registrarse</h2>
+	<form:form action="/register" method="POST" modelAttribute="usuario">
+		
+		<form:label path="nombre">Nombre:</form:label>
+		<form:input path="nombre" type="text" />
+		<form:errors path="nombre" />
+		
+		<form:label path="apellido">Apellido:</form:label>
+		<form:input path="apellido" type="text" />
+		<form:errors path="apellido" />
+		
 		<form:label path="email">Email:</form:label>
 		<form:input path="email" type="text" />
 		<form:errors path="email" />
@@ -23,7 +32,11 @@
 		<form:input path="password" type="text" />
 		<form:errors path="password" />
 		
-		<input type="submit" value="Iniciar Sesión" />
+		<form:label path="confirmarPassword">Confirmar Contraseña:</form:label>
+		<form:input path="confirmarPassword" type="text" />
+		<form:errors path="confirmarPassword" />
+		
+		<input type="submit" value="Registrase" />
 	</form:form>
 </body>
 </html>
